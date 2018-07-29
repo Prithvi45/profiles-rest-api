@@ -11,7 +11,7 @@ class UserProfileManager(BaseUserManager):
         """ create a new user profile """
         if not email:
             raise ValueError('User must have a email')
-        email - self.normalize_email(email)
+        email = self.normalize_email(email)
         user = self.model(email=email, name=name)
 
         user.set_password(password)
@@ -54,6 +54,6 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         return self.name
 
     def __str__(self):
-        """ to print user object into string """
+        """What to show when we output an object as a string."""
 
-        return self.name
+        return self.email
