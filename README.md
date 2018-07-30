@@ -10,4 +10,5 @@ Django REST API providing basic functionality for managing user profiles.
 # Requirements 
 
 * [Vagrant] (https://www.vagrantup.com/)
-* [VirtualBox]:https://www.virtualbox.org/wiki/Downloads
+* [VirtualBox]: https://www.virtualbox.org/wiki/Downloads
+[I'm an inline-style link](https://www.google.com)
