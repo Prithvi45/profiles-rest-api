@@ -34,13 +34,13 @@ vagrant up
 ```bash
 vagrant ssh
 ```
-** Install all python packages **
+**Install all python packages**
 ```bash
 cd /vagrant/
 pip install requirements.txt
 ```
 
-**Start Django development server **
+**Start Django development server**
 
 ```bash
 cd src/profiles_project
