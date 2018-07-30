@@ -28,3 +28,9 @@ cd profiles-reat-api
 vagrant up
 ```
 **Note:** the above can take several minutes, especially the first time it runs (needs to download the Ubuntu Vagrant Box and install the required packages on each VM). This will take long only the first time, starting and stoping the VMs hereafter will be significantly faster. 
+
+***Connect to ubuntu virtual machine via ssh
+
+```bash
+vagrant ssh
+```
