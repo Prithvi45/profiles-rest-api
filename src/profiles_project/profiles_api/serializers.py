@@ -9,30 +9,6 @@ class HelloSerializers(serializers.Serializer):
 
     name = serializers.CharField(max_length=10)
 
-#
-# class UserProfileSerializer(serializers.ModelSerializer):
-#     """A serializer for our profile object."""
-#
-#     class Meta:
-#         model = models.UserProfile
-#         fields = ('id', 'email', 'name', 'last_login', 'password')
-#         extra_kwargs = {
-#             'last_login': {'read_only': True},
-#             'password': {'write_only': True}
-#         }
-#
-#     def create(self, validated_data):
-#         """Used to create a new user."""
-#
-#         user = models.UserProfile(
-#             email=validated_data['email'],
-#             name=validated_data['name']
-#         )
-#
-#         user.set_password(validated_data['password'])
-#         user.save()
-#         return user
-#
 
 class UserProfileSerializer(serializers.ModelSerializer):
     """ Serializer for our UserProfile objects """
@@ -53,3 +29,15 @@ class UserProfileSerializer(serializers.ModelSerializer):
         user.set_password(validated_data['password'])
         user.save()
         return user
+
+
+class ProfileFeedItemSerializer(serializers.ModelSerializer):
+    """ A serializer for profile feed update"""
+
+    class Meta:
+        model = models.ProfileFeedItem
+        fields = ('id','user_profile','status_text','created_on')
+        extra_kwargs = {'user_profile':{'read_only':True}}
+
+    # def create(self, validated_data):
+    #     """ Used to created a new Feed Item """
